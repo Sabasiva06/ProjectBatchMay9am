@@ -1,6 +1,8 @@
 package org.sample;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Browser {
@@ -10,5 +12,11 @@ public class Browser {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
+		WebElement txtUserName = driver.findElement(By.id("email"));
+		txtUserName.sendKeys("welcomejavaa");
+		WebElement txtPassword = driver.findElement(By.id("pass"));
+		txtPassword.sendKeys("javawelocmesyoy");
+		WebElement btnLogin = driver.findElement(By.name("login"));
+		btnLogin.click();
 	}
 }
