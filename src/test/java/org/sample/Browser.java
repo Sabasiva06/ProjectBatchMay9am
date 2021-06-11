@@ -1,5 +1,5 @@
 package org.sample;
-
+import org.openqa.selenium.By;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Browser {
@@ -23,6 +24,12 @@ public class Browser {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
+		WebElement txtUserName = driver.findElement(By.id("email"));
+		txtUserName.sendKeys("welcomejavaa");
+		WebElement txtPassword = driver.findElement(By.id("pass"));
+		txtPassword.sendKeys("javawelocmesyoy");
+		WebElement btnLogin = driver.findElement(By.name("login"));
+		btnLogin.click();
 		File file = new File("D:\\3PmFrameWorkBatch\\ExcelData\\Book1.xlsx");
 		FileInputStream stream = new FileInputStream(file);
 		Workbook workbook = new XSSFWorkbook(stream);
@@ -51,5 +58,7 @@ public class Browser {
 			}
 
 		}
+
+
 	}
 }
