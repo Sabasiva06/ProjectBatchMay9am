@@ -1,4 +1,5 @@
 package org.sample;
+
 import org.openqa.selenium.By;
 import java.io.File;
 import java.io.FileInputStream;
@@ -58,7 +59,9 @@ public class Browser {
 			}
 
 		}
-
+		driver.findElement(By.id("username")).sendKeys("karthi007");
+		driver.findElement(By.id("password")).sendKeys("Karthi@1898");
+		driver.findElement(By.tagName("tr")).click();
 
 	}
 }
